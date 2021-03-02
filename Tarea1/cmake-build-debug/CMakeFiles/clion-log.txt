@@ -1,0 +1,4 @@
+/snap/clion/139/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/garroakion/Desktop/TEC/DatosProjects/Tarea1/ITCR.Datos2.Tarea1/Tarea1
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/garroakion/Desktop/TEC/DatosProjects/Tarea1/ITCR.Datos2.Tarea1/Tarea1/cmake-build-debug

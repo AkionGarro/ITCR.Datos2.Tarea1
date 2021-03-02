@@ -1,0 +1,3 @@
+/home/garroakion/Desktop/TEC/DatosProjects/Tarea1/ITCR.Datos2.Tarea1/Tarea1/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/garroakion/Desktop/TEC/DatosProjects/Tarea1/ITCR.Datos2.Tarea1/Tarea1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/garroakion/Desktop/TEC/DatosProjects/Tarea1/ITCR.Datos2.Tarea1/Tarea1/cmake-build-debug/CMakeFiles/Tarea1.dir
