@@ -8,7 +8,7 @@
 
 
 class Collector {
-    /*
+
 private:
     Node *head;
     friend class Node;
@@ -20,7 +20,8 @@ public:
     Node *setHead(Node *head);
     Node *getHead();
     bool isEmpty();
-*/
+
+
 };
 
 

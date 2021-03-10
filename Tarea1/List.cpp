@@ -14,17 +14,15 @@ List::List() {
 
 void List::add_node(Node *n) {
     if (head == NULL) {
-        head = n;
-    } /*else {
+        this->head = n;
+    } else {
         setHead(n);
-    }*/
+    }
 }
 
 Node *List::setHead(Node *head) {
-    Node *temp = new Node(getHead()->getValue());
+    head->setNext(this->head);
     this->head = head;
-    head->setNext(temp);
-
 }
 
 Node *List::getHead() {

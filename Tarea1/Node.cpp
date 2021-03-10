@@ -49,8 +49,12 @@ void Node::setValue(int value) {
 //New & Delete operators
 
 void *Node::operator new(std::size_t size) {
+
+
     void *p = ::new Node();
     return p;
+
+
 }
 
 void Node::operator delete(void *p) {

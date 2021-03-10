@@ -4,7 +4,7 @@
 
 #include "Collector.h"
 #include "Node.h"
-/*
+
 
 Collector::Collector() {
     head = NULL;
@@ -19,7 +19,7 @@ void Collector::add_Node(Node *n) {
 }
 
 Node *Collector::setHead(Node *head) {
-    Node *temp = new Node(getHead()->getValue(), getHead()->getNext());
+    Node *temp = new Node(getHead()->getValue());
     this->head = head;
     head->setNext(temp);
 
@@ -38,4 +38,4 @@ bool Collector::isEmpty() {
     }
     return flag;
 }
-*/
+
