@@ -6,25 +6,29 @@
 
 #IncludeRegexTransform: 
 
-/home/garroakion/Desktop/TEC/DatosProjects/Tarea1/ITCR.Datos2.Tarea1/Tarea1/Collector.cpp
-Collector.h
-/home/garroakion/Desktop/TEC/DatosProjects/Tarea1/ITCR.Datos2.Tarea1/Tarea1/Collector.h
-
-/home/garroakion/Desktop/TEC/DatosProjects/Tarea1/ITCR.Datos2.Tarea1/Tarea1/Collector.h
-
 /home/garroakion/Desktop/TEC/DatosProjects/Tarea1/ITCR.Datos2.Tarea1/Tarea1/List.cpp
 List.h
 /home/garroakion/Desktop/TEC/DatosProjects/Tarea1/ITCR.Datos2.Tarea1/Tarea1/List.h
+Node.h
+/home/garroakion/Desktop/TEC/DatosProjects/Tarea1/ITCR.Datos2.Tarea1/Tarea1/Node.h
+stdlib.h
+-
 
 /home/garroakion/Desktop/TEC/DatosProjects/Tarea1/ITCR.Datos2.Tarea1/Tarea1/List.h
-
-/home/garroakion/Desktop/TEC/DatosProjects/Tarea1/ITCR.Datos2.Tarea1/Tarea1/Node.cpp
 Node.h
 /home/garroakion/Desktop/TEC/DatosProjects/Tarea1/ITCR.Datos2.Tarea1/Tarea1/Node.h
 
 /home/garroakion/Desktop/TEC/DatosProjects/Tarea1/ITCR.Datos2.Tarea1/Tarea1/Node.h
+iostream
+-
 
 /home/garroakion/Desktop/TEC/DatosProjects/Tarea1/ITCR.Datos2.Tarea1/Tarea1/main.cpp
 iostream
+-
+Node.h
+/home/garroakion/Desktop/TEC/DatosProjects/Tarea1/ITCR.Datos2.Tarea1/Tarea1/Node.h
+List.h
+/home/garroakion/Desktop/TEC/DatosProjects/Tarea1/ITCR.Datos2.Tarea1/Tarea1/List.h
+new
 -
 
