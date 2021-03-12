@@ -19,7 +19,6 @@ public:
 
     Collector(Collector &other) = delete;
     void operator=(const Collector &) = delete;
-
     static Collector *GetInstance();
 
     Collector();

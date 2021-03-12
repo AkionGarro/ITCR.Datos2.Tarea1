@@ -7,7 +7,16 @@
 #include<stdlib.h>
 
 using namespace std;
+List* List::list_= nullptr;
 
+List *List::GetInstance()
+{
+
+    if(list_==nullptr){
+        list_ = new List();
+    }
+    return list_;
+}
 List::List() {
     head = NULL;
 }
@@ -55,6 +64,40 @@ void List::listStatus() {
     }
 
 }
+/*
+void List::deleteNode(Node** head_ref, int key)
+{
+
+    Node* temp = *head_ref;
+    Node* prev = NULL;
+
+    if (temp != NULL && temp->getValue() == key)
+    {
+        *head_ref = temp->getNext();
+        delete temp;
+        return;
+    }
+
+    else
+    {
+        while (temp != NULL && temp->getValue() != key)
+        {
+            prev = temp;
+            temp = temp->getNext();
+        }
+
+        // If key was not present in linked list
+        if (temp == NULL)
+            return;
+
+        // Unlink the node from linked list
+        prev->setNext(temp->getNext());
+
+        // Free memory
+        delete temp;
+    }
+}
+*/
 
 
 

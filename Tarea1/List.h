@@ -9,10 +9,16 @@
 
 
 class List {
-
+protected:
+    static List* list_;
 private:
     Node *head;
 public:
+
+    List(List &other) = delete;
+    void operator=(const List &) = delete;
+    static List *GetInstance();
+
     List();
 
     ~List();
@@ -28,6 +34,7 @@ public:
     void deleteFirst();
 
     void listStatus();
+    //void deleteNode(Node** head_ref, int key);
 };
 
 
