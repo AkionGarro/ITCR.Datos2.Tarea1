@@ -5,18 +5,19 @@
 #include "List.h"
 #include "Node.h"
 #include<stdlib.h>
+#include <bits/stdc++.h>
 
 using namespace std;
-List* List::list_= nullptr;
+List *List::list_ = nullptr;
 
-List *List::GetInstance()
-{
+List *List::GetInstance() {
 
-    if(list_==nullptr){
+    if (list_ == nullptr) {
         list_ = new List();
     }
     return list_;
 }
+
 List::List() {
     head = NULL;
 }
@@ -39,65 +40,61 @@ Node *List::getHead() {
 }
 
 
-void List::deleteFirst() {
-    Node *temp = head;
-    if (temp == NULL) {
-        cout << "Empty List" << endl;
-    }else{
-        this->setHead(this->head->getNext());
-        temp->setNext(NULL);
-        delete temp;
-    }
-}
-
 void List::listStatus() {
-    if(this->head==NULL){
-        cout<<"List: [ ]"<<endl;
-    }else{
+    if (this->head == NULL) {
+        cout << "List: [ ]" << endl;
+    } else {
         Node *tmp = this->head;
-        cout<< "LinkedList: [";
-        while(tmp->getNext()!= nullptr){
-            cout<<tmp->getValue()<<"->";
+        cout << "LinkedList: [";
+        while (tmp->getNext() != nullptr) {
+            cout << tmp->getValue() << "->";
             tmp = tmp->getNext();
         }
-        cout<<tmp->getValue()<<"] \n\n";
+        cout << tmp->getValue() << "] \n\n";
     }
 
 }
-/*
-void List::deleteNode(Node** head_ref, int key)
-{
 
-    Node* temp = *head_ref;
-    Node* prev = NULL;
+void List::deleteNode(Node *nodeDelete) {
+    int top = List::size(List::GetInstance());
+    Node *current = List::GetInstance()->getHead();
+    Node *previous = new Node();
+    previous = NULL;
 
-    if (temp != NULL && temp->getValue() == key)
-    {
-        *head_ref = temp->getNext();
-        delete temp;
-        return;
-    }
+    for (int i = 0; i < top; i++) {
 
-    else
-    {
-        while (temp != NULL && temp->getValue() != key)
-        {
-            prev = temp;
-            temp = temp->getNext();
+        if (List::GetInstance()->getHead()==nodeDelete && previous == NULL) {
+            current = current->getNext();
+            List::GetInstance()->head = current;
+            break;
         }
 
-        // If key was not present in linked list
-        if (temp == NULL)
-            return;
-
-        // Unlink the node from linked list
-        prev->setNext(temp->getNext());
-
-        // Free memory
-        delete temp;
+        if (current != nodeDelete && current->getNext() == nullptr) {
+            cout << "No se encuentra el nodo"<<endl;
+        }
+        if (current == nodeDelete) {
+            previous->setNext(current->getNext());
+        } else {
+            previous = current;
+            current = current->getNext();
+        }
     }
+    return;
+
+
 }
-*/
+
+int List::size(List *list) {
+    int i = 0;
+    Node *ptr = list->getHead();
+    while (ptr != nullptr) {
+        ptr = ptr->getNext();
+        i++;
+    }
+    return i;
+
+}
+
 
 
 

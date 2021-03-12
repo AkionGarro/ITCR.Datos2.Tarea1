@@ -10,13 +10,15 @@
 
 class List {
 protected:
-    static List* list_;
+    static List *list_;
 private:
     Node *head;
 public:
 
     List(List &other) = delete;
+
     void operator=(const List &) = delete;
+
     static List *GetInstance();
 
     List();
@@ -29,12 +31,12 @@ public:
 
     void add_node(Node *n);
 
-    bool isEmpty();
-
-    void deleteFirst();
-
     void listStatus();
-    //void deleteNode(Node** head_ref, int key);
+
+    void deleteNode(Node *node);
+
+    int size(List *list);
+
 };
 
 
