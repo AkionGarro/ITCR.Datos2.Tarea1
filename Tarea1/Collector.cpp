@@ -5,12 +5,22 @@
 #include "Collector.h"
 #include "Node.h"
 
+Collector* Collector::collector_= nullptr;
+
+Collector *Collector::GetInstance()
+{
+
+    if(collector_==nullptr){
+        collector_ = new Collector();
+    }
+    return collector_;
+}
 
 Collector::Collector() {
     head = NULL;
 }
 
-void Collector::add_Node(Node *n) {
+void Collector::add_node(Node *n) {
     if (head == NULL) {
         head = n;
     } else {
@@ -19,10 +29,8 @@ void Collector::add_Node(Node *n) {
 }
 
 Node *Collector::setHead(Node *head) {
-    Node *temp = new Node(getHead()->getValue());
+    head->setNext(this->head);
     this->head = head;
-    head->setNext(temp);
-
 }
 
 Node * Collector::getHead() {
@@ -39,3 +47,17 @@ bool Collector::isEmpty() {
     return flag;
 }
 
+void Collector::collectorStatus() {
+    if(this->head==NULL){
+        cout<<"Collector: [ ]"<<endl;
+    }else{
+        Node *tmp = Collector::GetInstance()->getHead();
+        cout<< "Collector: [";
+        while(tmp->getNext()!= nullptr){
+            cout<<tmp->getValue()<<"->";
+            tmp = tmp->getNext();
+        }
+        cout<<tmp->getValue()<<"] \n\n";
+    }
+
+}

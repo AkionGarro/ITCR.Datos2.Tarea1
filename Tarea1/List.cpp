@@ -42,14 +42,19 @@ void List::deleteFirst() {
 }
 
 void List::listStatus() {
-
-    if(this->head == NULL){
-
+    if(this->head==NULL){
+        cout<<"List: [ ]"<<endl;
+    }else{
+        Node *tmp = this->head;
+        cout<< "LinkedList: [";
+        while(tmp->getNext()!= nullptr){
+            cout<<tmp->getValue()<<"->";
+            tmp = tmp->getNext();
+        }
+        cout<<tmp->getValue()<<"] \n\n";
     }
 
 }
-
-
 
 
 

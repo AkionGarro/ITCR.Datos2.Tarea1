@@ -8,6 +8,8 @@
 #include <iostream>
 
 
+
+
 using namespace std;
 
 class Node {
@@ -15,6 +17,7 @@ class Node {
 private:
     int value;
     Node *next;
+
 
 public:
     //Constructors
@@ -43,6 +46,5 @@ public:
 
 
 };
-
 
 #endif //TAREA1_NODE_H

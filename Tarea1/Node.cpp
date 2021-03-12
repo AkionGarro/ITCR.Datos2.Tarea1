@@ -5,6 +5,7 @@
 #include "Node.h"
 #include "Collector.h"
 
+
 using namespace std;
 
 
@@ -22,7 +23,7 @@ Node::Node(int val) {
 //Destructor
 
 Node::~Node() {
-    cout << "Eliminado satisfactoriamente" << endl;
+
 }
 
 //Getters
@@ -49,14 +50,22 @@ void Node::setValue(int value) {
 //New & Delete operators
 
 void *Node::operator new(std::size_t size) {
+    if(Collector::GetInstance()->getHead()== nullptr){
+        void *p = ::new Node();
+        return p;
+    }else{
+        cout<<"Si se agrego el nodo al colector";
+        /*  Collector::GetInstance()->collectorStatus();
+          void *p = ::new Node();
+          return p;*/
+    }
 
-
-    void *p = ::new Node();
-    return p;
 
 
 }
 
 void Node::operator delete(void *p) {
-    free(p);
+    Collector::GetInstance()->add_node((Node*)p);
+
 }
+
