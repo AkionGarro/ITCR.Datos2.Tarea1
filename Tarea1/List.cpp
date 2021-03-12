@@ -5,11 +5,11 @@
 #include "List.h"
 #include "Node.h"
 #include<stdlib.h>
-#include <bits/stdc++.h>
-
 using namespace std;
-List *List::list_ = nullptr;
 
+//------------------------Singlethon Implementation------------------------------
+
+List *List::list_ = nullptr;
 List *List::GetInstance() {
 
     if (list_ == nullptr) {
@@ -17,6 +17,8 @@ List *List::GetInstance() {
     }
     return list_;
 }
+
+//------------------------------Methods--------------------------------
 
 List::List() {
     head = NULL;
@@ -40,6 +42,7 @@ Node *List::getHead() {
 }
 
 
+
 void List::listStatus() {
     if (this->head == NULL) {
         cout << "List: [ ]" << endl;
@@ -54,6 +57,8 @@ void List::listStatus() {
     }
 
 }
+
+
 
 void List::deleteNode(Node *nodeDelete) {
     int top = List::size(List::GetInstance());
@@ -80,6 +85,7 @@ void List::deleteNode(Node *nodeDelete) {
         }
     }
     return;
+
 
 
 }

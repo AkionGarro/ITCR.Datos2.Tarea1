@@ -5,6 +5,7 @@
 #include "Collector.h"
 #include "Node.h"
 
+//---------------------Singlethon Implementation--------------------------
 Collector* Collector::collector_= nullptr;
 
 Collector *Collector::GetInstance()
@@ -16,10 +17,12 @@ Collector *Collector::GetInstance()
     return collector_;
 }
 
+//------------------------------Constructor--------------------------------
 Collector::Collector() {
     head = NULL;
 }
 
+//------------------------------Methods--------------------------------
 void Collector::add_node(Node *n) {
     if (head == NULL) {
         head = n;
@@ -37,15 +40,6 @@ Node * Collector::getHead() {
     return head;
 }
 
-bool Collector::isEmpty() {
-    bool flag = false;
-    if (head==NULL){
-        flag = true;
-    }else{
-        flag= false;
-    }
-    return flag;
-}
 
 void Collector::collectorStatus() {
     if(this->head==NULL){

@@ -10,22 +10,25 @@
 class Collector {
 
 protected:
-    static Collector* collector_; //Singlethon
+    static Collector* collector_;
 private:
     Node *head;
     friend class Node;
 
 public:
-
+//-----------Singlethon-------------//
     Collector(Collector &other) = delete;
     void operator=(const Collector &) = delete;
     static Collector *GetInstance();
 
+
+//-----------Constructor-------------//
     Collector();
+
+//-------------Methods--------------//
     void add_node(Node *n);
     Node *setHead(Node *head);
     Node *getHead();
-    bool isEmpty();
     void collectorStatus();
 
 

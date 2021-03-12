@@ -33,12 +33,13 @@ int main() {
     cout<<List::GetInstance()->size(List::GetInstance())<<endl;
 
 
-    List::GetInstance()->deleteNode(n8);
+    List::GetInstance()->deleteNode(n1);
     List::GetInstance()->listStatus();
+    Collector::GetInstance()->collectorStatus();
 /*
 
     delete n4;
-    Collector::GetInstance()->collectorStatus();
+
 
 */
 
