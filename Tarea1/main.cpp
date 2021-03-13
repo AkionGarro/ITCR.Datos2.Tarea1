@@ -19,7 +19,6 @@ int main(){
     List::GetInstance()->add_node(n4);
     List::GetInstance()->listStatus();
     Collector::GetInstance()->collectorStatus();
-    //List::GetInstance()->deleteNode(n4);
     delete n3;
     List::GetInstance()->listStatus();
     Collector::GetInstance()->collectorStatus();
