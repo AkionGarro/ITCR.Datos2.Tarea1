@@ -53,7 +53,7 @@ void List::listStatus() {
             cout << tmp->getValue() << "->";
             tmp = tmp->getNext();
         }
-        cout << tmp->getValue() << "] \n\n";
+        cout << tmp->getValue() << "] \n";
     }
 
 }

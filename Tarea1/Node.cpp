@@ -6,6 +6,7 @@
 #include "Collector.h"
 
 
+
 using namespace std;
 
 
@@ -62,7 +63,10 @@ void *Node::operator new(std::size_t size) {
 }
 
 void Node::operator delete(void *p) {
-    Collector::GetInstance()->add_node((Node*)p);
+    Node *temp= (Node*)p;
+    temp->setNext(NULL);
+    Collector::GetInstance()->add_node(temp);
+
 
 }
 
