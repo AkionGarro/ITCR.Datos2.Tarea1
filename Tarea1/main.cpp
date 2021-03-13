@@ -9,10 +9,14 @@ using namespace std;
 
 
 int main(){
+    List::GetInstance()->listStatus();
+    Collector::GetInstance()->collectorStatus();
+
     Node *n1 = new Node(1);
     Node *n2 = new Node(2);
     Node *n3 = new Node(3);
     Node *n4 = new Node(4);
+
     List::GetInstance()->add_node(n1);
     List::GetInstance()->add_node(n2);
     List::GetInstance()->add_node(n3);
@@ -22,9 +26,6 @@ int main(){
     delete n3;
     List::GetInstance()->listStatus();
     Collector::GetInstance()->collectorStatus();
-
-
-
 
 
 

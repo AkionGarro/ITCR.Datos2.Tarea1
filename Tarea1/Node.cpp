@@ -50,24 +50,25 @@ void Node::setValue(int value) {
 //------------------Overloading New & Delete Operators------------------------
 
 void *Node::operator new(std::size_t size) {
-    if(Collector::GetInstance()->getHead()== nullptr){
+    if (Collector::GetInstance()->getHead() == nullptr) {
         void *p = ::new Node();
+        cout<<"Creacion de nodo con memoria nueva"<<endl;
         return p;
-    }else{
-        cout<<"Si se agrego el nodo al colector";
-        /*  Collector::GetInstance()->collectorStatus();
-          void *p = ::new Node();
-          return p;*/
+    } else {
+        /*Node *n = Collector::GetInstance()->getHead();
+        n->setValue(size);
+        Collector::GetInstance()->deleteNode((Collector::GetInstance()->getHead()));
+        return n;*/
     }
 
 }
 
 void Node::operator delete(void *p) {
-    List::GetInstance()->deleteNode((Node*)p);
-    Node *temp= (Node*)p;
+    List::GetInstance()->deleteNode((Node *) p);
+    Node *temp = (Node *) p;
     temp->setNext(NULL);
     Collector::GetInstance()->add_node(temp);
-
+    cout<<"Se agrego el nodo al Collector y se elimino de la lista"<<endl;
 
 
 }

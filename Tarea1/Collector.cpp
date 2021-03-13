@@ -55,3 +55,45 @@ void Collector::collectorStatus() {
     }
 
 }
+
+
+void Collector::deleteNode(Node *nodeDelete) {
+    int top = Collector::size(Collector::GetInstance());
+    Node *current = Collector::GetInstance()->getHead();
+    Node *previous = new Node();
+    previous = NULL;
+
+    for (int i = 0; i < top; i++) {
+
+        if (Collector::GetInstance()->getHead()==nodeDelete && previous == NULL) {
+            current = current->getNext();
+            Collector::GetInstance()->head = current;
+            break;
+        }
+
+        if (current != nodeDelete && current->getNext() == nullptr) {
+            cout << "No se encuentra el nodo"<<endl;
+        }
+        if (current == nodeDelete) {
+            previous->setNext(current->getNext());
+        } else {
+            previous = current;
+            current = current->getNext();
+        }
+    }
+    return;
+
+
+
+}
+
+int Collector::size(Collector *collector) {
+    int i = 0;
+    Node *ptr = collector->getHead();
+    while (ptr != nullptr) {
+        ptr = ptr->getNext();
+        i++;
+    }
+    return i;
+
+}

@@ -31,6 +31,9 @@ public:
     Node *getHead();
     void collectorStatus();
 
+    void deleteNode(Node *node);
+    int size(Collector *collector);
+
 
 
 };
