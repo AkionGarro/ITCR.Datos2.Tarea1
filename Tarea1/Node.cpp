@@ -4,7 +4,7 @@
 #include <iostream>
 #include "Node.h"
 #include "Collector.h"
-
+#include "List.h"
 
 
 using namespace std;
@@ -63,9 +63,11 @@ void *Node::operator new(std::size_t size) {
 }
 
 void Node::operator delete(void *p) {
+    List::GetInstance()->deleteNode((Node*)p);
     Node *temp= (Node*)p;
     temp->setNext(NULL);
     Collector::GetInstance()->add_node(temp);
+
 
 
 }

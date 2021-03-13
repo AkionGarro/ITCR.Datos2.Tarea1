@@ -15,6 +15,7 @@ protected:
 
 private:
     Node *head;
+    friend class Node;
 
 public:
 //-------------Singlethon--------------/
