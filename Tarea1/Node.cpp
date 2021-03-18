@@ -12,7 +12,6 @@ using namespace std;
 
 //------------------------------Constructors--------------------------------
 Node::Node() {
-    value = 0;
     next = NULL;
 }
 
@@ -52,24 +51,22 @@ void Node::setValue(int value) {
 void *Node::operator new(std::size_t size) {
     if (Collector::GetInstance()->getHead() == nullptr) {
         void *p = ::new Node();
-        cout<<"Creacion de nodo con memoria nueva"<<endl;
+        cout << "Creacion de nodo con memoria nueva" << endl;
         return p;
     } else {
-        /*Node *n = Collector::GetInstance()->getHead();
-        n->setValue(size);
-        Collector::GetInstance()->deleteNode((Collector::GetInstance()->getHead()));
-        return n;*/
+        Node *n = Collector::GetInstance()->getHead();
+        n->setNext(NULL);
+        cout << "Creacion de nodo con memoria reutilizada" << endl;
+        return n;
+
     }
 
 }
 
 void Node::operator delete(void *p) {
     List::GetInstance()->deleteNode((Node *) p);
-    Node *temp = (Node *) p;
-    temp->setNext(NULL);
-    Collector::GetInstance()->add_node(temp);
-    cout<<"Se agrego el nodo al Collector y se elimino de la lista"<<endl;
-
-
+    ((Node *) p)->setNext(NULL);
+    Collector::GetInstance()->add_node((Node *) p);
+    cout << "Se agrego el nodo al Collector y se elimino de la lista" << endl;
 }
 

@@ -5,6 +5,7 @@
 #include "List.h"
 #include "Node.h"
 #include<stdlib.h>
+#include "Collector.h"
 using namespace std;
 
 //------------------------Singlethon Implementation------------------------------
@@ -25,10 +26,18 @@ List::List() {
 }
 
 void List::add_node(Node *n) {
+
     if (head == NULL) {
         this->head = n;
+        cout<<""<<endl;
+        cout<<"Se agrego un nodo a la lista"<<endl;
     } else {
+        if(Collector::GetInstance()->getHead()==n){
+            Collector::GetInstance()->deleteNode(n);
+        }
         setHead(n);
+
+        cout<<"Se agrego un nodo a la lista"<<endl;
     }
 }
 
@@ -47,6 +56,7 @@ void List::listStatus() {
     if (this->head == NULL) {
         cout << "List: [ ]" << endl;
     } else {
+        cout<<""<<endl;
         Node *tmp = this->head;
         cout << "LinkedList: [";
         while (tmp->getNext() != nullptr) {

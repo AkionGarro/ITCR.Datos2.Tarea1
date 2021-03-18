@@ -44,6 +44,7 @@ Node * Collector::getHead() {
 void Collector::collectorStatus() {
     if(this->head==NULL){
         cout<<"Collector: [ ]"<<endl;
+        cout<<""<<endl;
     }else{
         Node *tmp = Collector::GetInstance()->getHead();
         cout<< "Collector: [";
@@ -52,6 +53,7 @@ void Collector::collectorStatus() {
             tmp = tmp->getNext();
         }
         cout<<tmp->getValue()<<"] \n\n";
+        cout<<""<<endl;
     }
 
 }
@@ -68,6 +70,8 @@ void Collector::deleteNode(Node *nodeDelete) {
         if (Collector::GetInstance()->getHead()==nodeDelete && previous == NULL) {
             current = current->getNext();
             Collector::GetInstance()->head = current;
+            cout<<"Se elimino el nodo del collector y se agrego a la lista"<<endl;
+
             break;
         }
 
@@ -76,11 +80,13 @@ void Collector::deleteNode(Node *nodeDelete) {
         }
         if (current == nodeDelete) {
             previous->setNext(current->getNext());
+            cout<<"Se elimino el nodo del collector y se agrego a la lista"<<endl;
         } else {
             previous = current;
             current = current->getNext();
         }
     }
+
     return;
 
 

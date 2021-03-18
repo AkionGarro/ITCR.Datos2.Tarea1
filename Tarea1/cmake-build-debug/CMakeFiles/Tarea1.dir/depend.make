@@ -5,6 +5,7 @@ CMakeFiles/Tarea1.dir/Collector.cpp.o: ../Collector.cpp
 CMakeFiles/Tarea1.dir/Collector.cpp.o: ../Collector.h
 CMakeFiles/Tarea1.dir/Collector.cpp.o: ../Node.h
 
+CMakeFiles/Tarea1.dir/List.cpp.o: ../Collector.h
 CMakeFiles/Tarea1.dir/List.cpp.o: ../List.cpp
 CMakeFiles/Tarea1.dir/List.cpp.o: ../List.h
 CMakeFiles/Tarea1.dir/List.cpp.o: ../Node.h
